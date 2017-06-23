@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <style>
+            #dashboard{
+                width: 140px;
+                height: 560px;
+                background-color: rgb(200,200,200);
+                padding: 20px 20px 0 20px;
+                position: absolute;
+                left: -160px;
+            }
+            
+            #dashboard2{
+                width: 560px;
+                height: 140px;
+                background-color: rgb(200,200,200);
+                padding: 10px 20px 10px 20px;
+                position: absolute;
+                left: 200px;
+                top: -140px;
+            }
+            
+            img {
+                width: 128px;
+                height: 128px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="dashboard">
+            <img src="black.png" alt=""/>
+            <img src="blue.png" alt=""/>
+            <img src="green.png" alt=""/>
+            <img src="red.png" alt=""/>
+        </div>
+        
+        <div id="dashboard2">
+            <img src="black.png" alt=""/>
+            <img src="blue.png" alt=""/>
+            <img src="green.png" alt=""/>
+            <img src="red.png" alt=""/>
+        </div>
+        
+        <script>
+            function prawo(){
+                $(this).stop().animate({left: '0px'}, 600);
+            }
+            
+            function lewo(){
+                $(this).stop().animate({left: '-160px'}, 600);
+            }
+            
+            $(document).ready(function(){
+                $('#dashboard').hover(prawo, lewo);
+            });
+            
+            function dol(){
+                $(this).stop().animate({top: '0px'}, 600);
+            }
+            
+            function gora(){
+                $(this).stop().animate({top: '-140px'}, 600);
+            }
+            
+            $(document).ready(function(){
+                $('#dashboard2').hover(dol, gora);
+            });
+            
+            
+        </script>
+    </body>
+</html>

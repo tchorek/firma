@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum...
+            <a href="#" id="more">Zobacz więcej</a>
+        </p>
+        <p id="big_paragraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <script>
+            $('#big_paragraph').hide();
+            $('#more').click(function(){
+                $('#big_paragraph').slideToggle('slow');
+               // $('#big_paragraph').fadeIn('slow');
+               // $('#big_paragraph').slideDown('slow');
+            });
+        </script>
+        
+        
+        
+        
+        <script>
+            //$(document).ready(function(){
+            $(function(){
+                
+ 
+                //alert("Cała strona została załadowana");
+                document.querySelector("#pl").innerHTML = 'Ala ma kota';
+                
+                var txt = $('#pl').text();
+                $('#pl').text(txt + '. To jest tekst z jQuery!');
+                $(".kontener").html('<strong>Samuelek elemelek</strong>');
+                $("span").html("<i>Nowy Samuelkowy tekst</i>");
+            });
+        </script>
+        <p id="pl">Tu jest tekst</p>
+        <div class="kontener">content</div>
+        <span>Samuelek</span>
+        
+        <ul id="menu">
+            <li><a href="#">Strona 1</a></li>
+            <li><a href="#">Strona 2</a></li>
+            <li><a href="#">Strona 3</a></li>
+        </ul>
+        <a href="#">Strona 4</a>
+        <script>
+            $('#menu a').css("text-decoration", "none");
+            $('#menu a').css("color","red");
+        </script>
+        <script>
+//            $(document).ready(function(){
+//                
+//                //selektory dzieci
+//                $('body > div').css("background-color","yellow");
+//                $('body > p').css("background-color","blue");
+//                
+//                //selektor elementu sąsiadującego
+//                $("div + p").css("color","red");
+//                $("div > p:last").css("color","green");
+//            });
+        </script>
+        <div>
+            to jest dziecko body
+            <div>to jest dziecko div'a</div>
+            <p>par 1 w divie</p>
+            <p>par 2 w divie</p>
+        </div>
+        
+        <img src="green.png" alt='obrazek zielony'>
+        <img src="red.png" alt='obrazek czerwony'>
+        <img src="black.png" alt='obrazek czarny'>
+        <img src="blue.png" alt='obrazek niebieski'>
+        
+        <script>
+            //selektor atrybutu
+            $("img[src='green.png']").css("border","3px solid black");
+            
+            //atrybut konczacy sie na
+            $("img[alt$='ny']").css("border","4px dotted green");
+            
+            //atrybut zaczynający się na
+            $("img[src^='bl']").css("border","3px dashed blue");
+            
+            //atrybut zawierający
+            $("img[src*='png']").css("border","10px solid pink");
+        </script>
+        
+        <table border="1">
+            <tr>
+                <th>Header</th>
+                <th>Header2</th>
+            </tr>
+            <tr>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+        </table>
+        <script>
+            //parzyste elementy
+            $('tr:even').css("background","#aaa");
+            //nieparzyste elementy
+            $('tr:odd').css("background","#555");
+        </script>
+        
+        <p>paragraf 4</p>
+        <p class="par">paragraf 5</p>
+        <p>paragraf 6</p>
+        <script>
+            $("p:not(.par)").css("background","pink");
+        </script>
+        
+        <p>paragraf 7</p>
+        <p>paragraf 8 <a href="#">Idź do nowej strony</a></p>
+        <p>paragraf 9</p>
+        <script>
+            $("p:has(a)").css("text-decoration","underline");
+        </script>
+        
+        <p>paragraf 10. A tu ciekawostka!</p>
+        <script>
+            $("p:contains('ciek')").css("color","green");
+        </script>
+        
+         <p class="pp">paragraf 11. A tu ciekawostka!</p>
+         <p class="pp">paragraf 12. A tu ciekawostka!</p>
+         <p class="pp">paragraf 13. A tu ciekawostka!</p>
+         <script>
+             //zmien pierwszy
+            $(".pp:first").css("color","blue");
+             //zmien ostatni
+            $(".pp:last").css("color","red");
+        </script>
+        
+        <script>
+            $("body").hide().fadeIn(1000);
+            
+            $("body").hide();
+            $("body").fadeIn(1000);
+        </script>
+        
+        <img class="gfx" src="green.png" alt='obrazek zielony'>
+        <img class="gfx2" src="green.png" alt='obrazek zielony'>
+        <script>
+            $(function(){
+            $(".gfx").width(100).height(100).hide().fadeIn(1200);
+            
+            $(".gfx2").width(100)
+                    .height(100)
+                    .hide()
+                    .delay(1200)
+                    .fadeIn(1200);
+            })
+        </script>
+        
+        <div style="background-color: green">Kliknij mnie!</div>
+        <script>
+            $("div").click(function(){
+                $(this).fadeOut(2000);
+            });
+            
+            $("div").hover(niebieski, czerwony);
+            
+            function niebieski(){
+                $(this).css("background-color","blue");
+            }
+            function czerwony(){
+                $(this).css("background-color","red");
+            }
+        </script>
+        
+        
+
+    </body>
+</html>

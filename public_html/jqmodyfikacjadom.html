@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <style>
+            .foto{
+                border: 3px solid red;
+                width: 100px;
+                height: 100px;
+                /*overflow: hidden;*/
+            }
+            
+            .foto img{
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="lista">
+            <li>piwo</li>
+            <li>wino</li>
+            <li>mięta</li>
+        </ul>
+        
+        <button id="btn1">Dodaj element do listy</button>
+        <script>
+            $('#btn1').click(function(){
+                $('#lista').append('<li>joint</li>','<li>sok</li>');
+            });
+        </script>
+
+        <div>Ala ma kota</div>
+        <button id="btn2">Dodaj text na początku</button>
+        <script>
+            $('#btn2').click(function(){
+                $('div').prepend('Myszka ma kotka. ');
+            });
+        </script>
+        <br><br>
+        
+        <button id="btn3">Umieść obraz wewnątrz innego tagu HTML</button>
+        <br>
+        <img class="img" src="black.png" alt=""/>
+        <img class="img" src="blue.png" alt=""/>
+        <script>
+            $('#btn3').click(function(){
+                $('.img').wrap('<div class="foto"></div>');
+            });
+        </script>
+        <br><br>
+        
+        <button id="btn4">Zrób hiperłącze do pełnej wielkości obrazku</button>
+        <br>
+        <img class="img2" src="black.png" alt="" style="width: 100px"/>
+        <img class="img2" src="blue.png" alt="" style="width: 100px"/>
+        <script>
+            $('#btn4').click(function(){
+                $('.img2').wrap(function(){
+                    return "<a href='" + this.src + "'/>";
+                });
+            });
+        </script>
+        
+        <br><br>
+        
+        <button id="btn5">Dodaj tag HTML przed obrazami</button>
+        <br><br>
+        <button id="btn6">Dodaj tag HTML za obrazami</button>
+        <script>
+            $('#btn5').click(function(){
+                //$('.img').before('<p style="color: red;">Niżej jest fotka</p>');
+                $('.img:first').before('<p style="color: red;">Niżej jest fotka</p>');
+            });
+            $('#btn6').click(function(){
+                //$('.img').after('<p style="color: red;">Powyżej jest fotka</p>');
+                $('.img:last').before('<p style="color: red;">Powyżej jest fotka</p>');
+            });
+        </script>
+        
+        
+        <br><br>
+        <button id="btn7">Usuń obrazki</button>
+        <script>
+             $('#btn7').click(function(){
+                $('img').remove();
+            })
+        </script>
+        
+        <br><br>
+        <button id="btn8">Usuń tylko dzieci</button>
+        <div class="rodzina">
+            <div class="dziecko">Dziecko 1</div>
+            <div class="wnuczek">Wnuczek 1</div>
+            <div class="dziecko">Dziecko 2</div>
+            <div class="wnuczka">Wnuczka 1</div>
+        </div>
+        <script>
+             $('#btn8').click(function(){
+                $('div').remove('.dziecko');
+            })
+        </script>
+        
+        
+        <br><br>
+        <button id="btn9">Usuń wszystkie dzieci</button>
+        <div class="rodzic">
+            <div class="dzieci">Dziecko 1</div>
+            <div class="dzieci">Dziecko 2</div>
+            <div class="dzieci">Dziecko 3</div>
+            <div class="dzieci">Dziecko 4</div>
+        </div>
+        <script>
+             $('#btn9').click(function(){
+                $('.rodzic').empty();
+            });
+        </script>
+        
+        
+    </body>
+</html>

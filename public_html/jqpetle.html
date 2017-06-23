@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <style>
+            #lista{
+                position: absolute;
+            }
+            
+            #lista2{
+                position: absolute;
+            }
+            li{
+                margin: 15px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="black.png" alt=""/>
+        <img src="blue.png" alt=""/>
+        <img src="green.png" alt=""/>
+        <img src="red.png" alt=""/>
+        <div id="zrodla">Źródła zdjęć na stronie www:<br></div>
+        <script>
+            $('img').each(function () {
+                console.log('src=' + $(this).attr('src'));
+            });
+
+            $('img').each(function (index, value) {
+                console.log('Index img=' + index + ' src=' + value.src);
+            });
+
+            $.each($('img'), function (index, value) {
+                console.log('Index img=' + index + ' src=' + value.src);
+            });
+
+            var tab1 = ["Ala", "ma", "kota"];
+            $.each(tab1, function (index, value) {
+                console.log('pozycja = ' + index + ' wartość = ' + value);
+            });
+        </script>
+        <button id="btn">Schowaj obrazki po 2 sekundach</button>
+        <script>
+            $('#btn').click(function () {
+                $('img').each(function (index, value) {
+                    var o = 500 + index * 500;
+                    $(this).delay(o).fadeOut(1200, function(){
+                        console.log("wygaśnie - zakończyło się!");
+                        $(this).show().css("visibility","hidden");
+                    });
+                });
+            });
+
+            //$('img').delay(2000).fadeOut(1000);
+        </script>
+        
+        
+        <ul id="lista">
+            <li>piwo</li>
+            <li>wino</li>
+            <li>oranżada</li>
+        </ul>
+        <ul id="lista2">
+            <li>kiełbasa</li>
+            <li>ketchup</li>
+            <li>cukinia</li>
+        </ul>
+        <button id="btn2">Zmień listę</button>
+        <script>
+            $('#lista2 li').hide();
+            $('#btn2').click(function () {
+                
+                $('#lista li').each(function (index, value) {
+                    var o = index * 500;
+                    $(this).delay(o).fadeOut(1500, function(){
+                        $(this).show().css("visibility","hidden");
+                    });                       
+                });
+                
+                $('#lista2 li').each(function (index, value) {
+                    var o = 2000 + index * 500;
+                    $(this).delay(o).fadeIn(1500);                       
+                });
+            });
+
+            //$('img').delay(2000).fadeOut(1000);
+        </script>
+        
+    </body>
+</html>

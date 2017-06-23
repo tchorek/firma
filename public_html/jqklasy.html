@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <style>
+            .big{
+                font-size: 30px;
+                width: 800px;
+                height: 120px;
+                background: yellow;
+                color: black;
+            }
+            
+            .small{
+                font-size: 15px;
+                width: 600px;
+                height: 80px;
+                background: green;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <button id="btn1">Powiększ obiekt</button>
+        <script>
+            $('#btn1').click(function(){
+                $('div').removeClass("small");
+                $('div').addClass("big");
+            });
+        </script>
+        <button id="btn2">Zmniejsz obiekt</button>
+        <script>
+            $('#btn2').click(function(){
+                $('div').removeClass("big");
+                $('div').addClass("small");
+            });
+        </script>
+        
+        <button id="btn3">włacz/wyłącz obiekt</button>
+        <script>
+            $('#btn3').click(function(){
+                $('div').removeClass("small");
+                $('div').toggleClass("big");
+            });
+        </script>
+        
+        <button id="btn4">wymiary obiektu</button>
+        <script>
+            $('#btn4').click(function(){
+                $('div').css("padding", "20px").css("border","4px solid pink");
+                var text = "Szerokość = " + $('div').width();
+                text += "\nWysokość = " + $('div').height();
+                text += "\nSzerokość wew. = " + $('div').innerWidth();
+                text += "\nWysokość wew. = " + $('div').innerHeight();
+                text += "\nSzerokość zew. = " + $('div').outerWidth();
+                text += "\nWysokość zew. = " + $('div').outerHeight();
+                alert(text);
+            });
+        </script>
+    </body>
+</html>

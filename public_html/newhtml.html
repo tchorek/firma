@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <style>
+            div{
+                width: 300px;
+                height: 100px;
+                background: green;
+                line-height: 100px;
+                font-size: 20px;
+                text-align: center;
+                left: 0px;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn1">Kliknij mnie</button>
+        <div>Animowany div</div>
+        
+        <script>
+            $("#btn1").click(function(){
+                $("div").animate({left: '250px', top: '200px'}, 2000);
+            });
+        </script>
+        
+        <button id="btn2">Kliknij mnie</button>
+        <div>Animowany div 2</div>
+        <script>
+            $("#btn2").click(function(){
+                $("div").animate({
+                    left: '+=50px',
+                    height: '+=100px',
+                    width: '+=100px',
+                    lineHeight: '+=100px',
+                    fontSize: '+=10px',
+                });
+            });
+        </script>
+        
+        
+        <button id="btn3">Kliknij mnie - p</button>
+        <p>Animowany paragraf</p>
+        <script>
+            $("p").width(200).height(200).css("background-color","red").css({color: "green", lineHeight: "200px"});
+            $("#btn3").click(function(){
+                $("p").animate({
+                    height: 'toggle'
+                });
+            });
+        </script>
+        
+        <button id="btn4">Kliknij mnie - ANIMACJA KROK PO KROKU</button>
+        <script>
+            $("#btn4").click(function(){
+                var div = $("div");
+                div.css("transition","background-color 1.5s");
+                div.animate({height: '200px'}, "slow");
+                setTimeout(function(){
+                    $("div").css("backgroundColor", '#0000FF');
+                }, 800);
+                div.animate({width: '500px', left: '400px'}, 1000);
+                div.animate({fontSize: '40px', lineHeight: '200px'}, "slow");
+                div.animate({fontSize: '20px'}, 2000);
+                div.animate({left: '30px', width: '200px', height: '50px', lineHeight: '50px'}, 2000);
+            });
+        </script>
+    </body>
+</html>
